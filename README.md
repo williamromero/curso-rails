@@ -6,6 +6,7 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |-|-|
 |Ruby|2.7.6|
 |Rails|6.1.6|
+|MySQL|5.7|
 <br>
 
 ## ▶ WIKI DEL PROYECTO
