@@ -11,11 +11,11 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 
 ## ▶ WIKI DEL PROYECTO
 
-### 1. [Crear aplicación en Ruby on Rails](https://github.com/williamromero/curso-rails/wiki/1.-Crear-aplicaciones-en-Ruby-on-Rails)
-
-### 2. [Scaffolds :: Generador de Estructuras](https://github.com/williamromero/curso-rails/wiki/2.-Scaffolds-::-Generador-de-Estructuras)
-
-### 3. [Generadores :: Comandos de Consola](https://github.com/williamromero/curso-rails/wiki/3.-Generadores-::-Comandos-de-Consola--%F0%9F%8F%97%EF%B8%8F)
+| Tema | Referencia |
+|-|-|
+|1. Crear aplicación en Ruby on Rails|<https://github.com/williamromero/curso-rails/wiki/1.-Crear-aplicaciones-en-Ruby-on-Rails>|
+|2. Scaffolds :: Generador de Estructuras|<https://github.com/williamromero/curso-rails/wiki/2.-Scaffolds-::-Generador-de-Estructuras>|
+|3. Generadores :: Comandos de Consola|<https://github.com/williamromero/curso-rails/wiki/3.-Generadores-::-Comandos-de-Consola--%F0%9F%8F%97%EF%B8%8F>|
 
 <br>
 
@@ -34,17 +34,9 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |--|-----|
 |RVM Ruby Gemsets|<https://rvm.io/gemsets/basics>|
 |RVM Cheatsheet|<https://gist.github.com/zambrose/8342046>|
-<br>
-
-**RUBY**
-|Topic|Links|
-|--|-----|
+|**RUBY**|
 |Ruby Releases|<https://www.ruby-lang.org/en/downloads/releases/>|
-<br>
-
-**RAILS**
-|Topic|Links|
-|--|-----|
+|**RAILS**|
 |Welcome to Rails|<https://edgeapi.rubyonrails.org/>|
 |Building new Ruby on Rails Application|<https://www.bigbinary.com/learn-rubyonrails-book/new-ruby-on-rails-application>|
 |Rails Versions|<https://rubygems.org/gems/rails/versions>|
@@ -53,36 +45,16 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Rails Generate Commands|<https://riptutorial.com/ruby-on-rails/example/9630/rails-generate-scaffold>|
 |**CONSOLE**|
 |Rails Command Line|<https://guides.rubyonrails.org/command_line.html>|
-<br>
-
-**MIGRACIONES**
-|Topic|Links|
-|--|-----|
+|**MIGRACIONES**|
 |Generador de Migraciones|<https://mitrev.net/rails/2015/04/19/rails-migration-generator-specifying-precision-and-scale/>|
-<br>
-
-**ACTIVE MODEL**
-|Topic|Links|
-|--|-----|
+|**ACTIVE MODEL**|
 |Renderizar JSON con Rails & Active Model Serializer|<https://medium.com/academia-hack/renderizar-jsons-con-rails-y-active-model-serializer-98268a26c56c>|
 |Active Model Serialization|<https://api.rubyonrails.org/classes/ActiveModel/Serialization.html>|
-<br>
-
-**ACTIVE RECORD PERFORMANCE**
-|Topic|Links|
-|--|-----|
+|**ACTIVE RECORD PERFORMANCE**|
 |Caching in Rails 6|<https://www.youtube.com/watch?v=bIZaWF2QrZM>|
 |Active Record Joins|<https://www.youtube.com/watch?v=wjEeLjGkBeA>|
 |Improve performance in Ruby on Rails using Includes|<https://youtu.be/Ml2HyPBef-g>|
-<br>
-
-**BEST PRACTICES**
-|Topic|Links|
-|--|-----|
+|**BEST PRACTICES**|
 |Fat Model, Skinny Controller|<https://riptutorial.com/ruby-on-rails/example/9609/fat-model--skinny-controller>|
-<br>
-
-**AUTHENTICATION**
-|Topic|Links|
-|--|-----|
-|The Bcrypt Hashing| <https://manny.codes/understanding-the-bcrypt-hashing-function-and-its-role-in-rails/>|
+|**AUTHENTICATION**|
+|The Bcrypt Hashing|<https://manny.codes/understanding-the-bcrypt-hashing-function-and-its-role-in-rails/>|
