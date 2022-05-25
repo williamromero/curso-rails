@@ -58,3 +58,5 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Fat Model, Skinny Controller|<https://riptutorial.com/ruby-on-rails/example/9609/fat-model--skinny-controller>|
 |**AUTHENTICATION**|
 |The Bcrypt Hashing|<https://manny.codes/understanding-the-bcrypt-hashing-function-and-its-role-in-rails/>|
+|**GIT TOPICS**|
+|Delete git branch Locally and Remotely|<https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/>|
