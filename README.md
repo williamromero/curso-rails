@@ -44,7 +44,7 @@ Luego, corremos el próximo comando:
 
 ## Referencias
 
-|ID|Links|
+|Topic|Links|
 |--|-----|
 |**RVM**|
 |RVM Ruby Gemsets|https://rvm.io/gemsets/basics|
