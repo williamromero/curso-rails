@@ -31,15 +31,12 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 
 <br>
 
-**RVM**
+**RVM & RUBY VERSIONS**
 |Topic|Links|
 |--|-----|
 |RVM Ruby Gemsets|<https://rvm.io/gemsets/basics>|
 |RVM Cheatsheet|<https://gist.github.com/zambrose/8342046>|
-
-**RUBY**
-|Topic|Links|
-|--|-----|
+|**RUBY**|
 |Ruby Releases|<https://www.ruby-lang.org/en/downloads/releases/>|
 
 **RAILS**
@@ -51,10 +48,7 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Rails Generators|<https://guides.rubyonrails.org/command_line.html#bin-rails-generate>|
 |Rails Specific Generators|<https://www.rubyguides.com/2020/03/rails-scaffolding/>|
 |Rails Generate Commands|<https://riptutorial.com/ruby-on-rails/example/9630/rails-generate-scaffold>|
-
-**CONSOLE**
-|Topic|Links|
-|--|-----|
+|**CONSOLE**|
 |Rails Command Line|<https://guides.rubyonrails.org/command_line.html>|
 
 **MIGRACIONES**
