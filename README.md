@@ -50,6 +50,8 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Rails Generate Commands|<https://riptutorial.com/ruby-on-rails/example/9630/rails-generate-scaffold>|
 |**CONSOLE**|
 |Rails Command Line|<https://guides.rubyonrails.org/command_line.html>|
+|**BACKGROUND JOBS**|
+|Setting up Background Jobs in Ruby on Rails|https://www.youtube.com/watch?v=5Z21WARO7P8|
 
 **MIGRACIONES**
 |Topic|Links|
@@ -65,6 +67,7 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Caching in Rails 6|<https://www.youtube.com/watch?v=bIZaWF2QrZM>|
 |Active Record Joins|<https://www.youtube.com/watch?v=wjEeLjGkBeA>|
 |Improve performance in Ruby on Rails using Includes|<https://youtu.be/Ml2HyPBef-g>|
+|N+1 Problem: Eager Loading with Active Record|https://www.youtube.com/watch?v=wLMRzdOztUY|
 
 **BEST PRACTICES**
 |Topic|Links|
