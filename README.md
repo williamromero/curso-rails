@@ -83,6 +83,8 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Topic|Links|
 |--|-----|
 |Delete git branch Locally and Remotely|<https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/>|
+| Merging branchs in a Local Repository|<https://www.varonis.com/blog/git-branching>|
+
 
 **ANOTHER LINKS**
 |Topic|Links|

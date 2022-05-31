@@ -1,0 +1,30 @@
+es:
+  hello: "Hello world"
+
+  controllers:
+    product:
+      create:
+        success: "El producto fue creado satisfactoriamente."
+      update:
+        success: "El producto fue editado satisfactoriamente"
+      destroy:
+        message: "El producto fue destruído satisfactoriamente."        
+  activerecord:
+    models:
+      product:
+        one: "Producto"
+        other: "Productos"
+    attributes:
+      product:
+        name: "Nombre"
+        description: "Descripción"
+        price: "Precio"
+        stock: "Stock"
+  helpers:
+    label:
+      product:
+        name: "Nombre"
+        description: "Descripción"
+        price: "Precio"
+        stock: "Stock"
+    

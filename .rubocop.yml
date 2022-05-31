@@ -5,7 +5,10 @@ require:
 
 AllCops:
   Exclude:
+    - 'app/views/*.erb'
     - 'config/*.rb'
+    - 'config/environments/*.rb'
+    - 'config/initializers/*.rb'
     - 'log/**/*'
     - 'node_modules/**/*'
     - 'public/**/*'
@@ -14,6 +17,9 @@ AllCops:
     - 'spec/*'
     - 'bin/bundle'
     - 'Gemfile'
+    - 'bin/*'
+    - 'config/*'
+    - 'db/*'
   TargetRailsVersion: 6.1
   TargetRubyVersion: 3.0.1
   NewCops: enable
