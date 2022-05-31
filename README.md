@@ -83,3 +83,11 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Topic|Links|
 |--|-----|
 |Delete git branch Locally and Remotely|<https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/>|
+
+**ANOTHER LINKS**
+|Topic|Links|
+|-----|-----|
+|Docker & PostgreSQL - postgres y DBeaver|<https://www.youtube.com/watch?v=hVrKX2RtigQ>|
+|Desplegar una aplicación de React y Express JS con Docker :: DigitalOcean|<https://www.youtube.com/watch?v=g3IiU6pmruY>|
+|Build and Deploy a Modern Full Stack ECommerce React Application with Stripe
+|<https://www.youtube.com/watch?v=4mOkFXyxfsU>|

@@ -1,0 +1,144 @@
+require:
+  # - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'config/*.rb'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'public/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'spec/*'
+    - 'bin/bundle'
+    - 'Gemfile'
+  TargetRailsVersion: 6.1
+  TargetRubyVersion: 3.0.1
+  NewCops: enable
+Layout/DotPosition:
+  EnforcedStyle: trailing
+Layout/LineLength:
+  Max: 120
+  IgnoreCopDirectives: true
+  IgnoredPatterns:
+    - '^\s*x?context\s.*'
+    - '^\s*x?it\s.*'
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+Lint/RedundantSplatExpansion:
+  Enabled: false
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+    - 'spec/**/*'
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
+    - 'db/migrate/*'
+    - 'spec/**/*'
+    - 'Gemfile'
+  IgnoredMethods:
+    - 'class_eval'
+    - 'class_methods'
+    - 'get'
+    - 'included'
+    - 'instance_eval'
+    - 'namespace'
+    - 'post'
+    - 'put'
+    - 'resource'
+    - 'route_param'
+    - 'searchable'
+    - 'SitemapGenerator::Sitemap.create'
+    - 'task'
+Metrics/ClassLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: true
+  Max: 100  
+Metrics/ModuleLength:
+  Enabled: false
+Naming/VariableNumber:
+  EnforcedStyle: normalcase
+Rails:
+  Enabled: true
+Rails/FilePath:
+  EnforcedStyle: 'arguments'
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production
+RSpec/AlignLeftLetBrace:
+  Enabled: false
+RSpec/AlignRightLetBrace:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/Capybara/FeatureMethods:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/ExampleWording:
+  Enabled: false
+RSpec/ExpectChange:
+  EnforcedStyle: block
+RSpec/FilePath:
+  Enabled: false
+RSpec/HookArgument:
+  EnforcedStyle: each
+RSpec/InstanceVariable:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MessageExpectation:
+  Enabled: false
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/NestedGroups:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: true
+
+Style/BlockDelimiters:
+  IgnoredMethods:
+    - 'expect'
+    - 'it'
+    - 'lambda'
+    - 'proc'
+Style/Documentation:
+  Enabled: false
+  # Exclude: 
+  #   - 'app/models/**/*'
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Enabled: false 
+Style/FormatString:
+  EnforcedStyle: percent
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/Lambda:
+  Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
