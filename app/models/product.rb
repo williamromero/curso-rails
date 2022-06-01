@@ -11,26 +11,40 @@
 #  updated_at  :datetime         not null
 #
 class Product < ApplicationRecord
+  # Callbacks
+  before_save   :notify_product_saving
+  before_update :out_of_stock, if: :stock_is_changed?
+  after_save    :notify_product_saved
 
-  before_save :notify_product_saving
-  after_save  :notify_product_saved
+  # Validations
+  validates :name, presence: { message: 'El campo nombre no ha sido correctamente introducido' }
+  validates :description, presence: { message: 'El campo descripción no ha sido correctamente introducido' }
+  validates :price, numericality: { greater_than_or_equal_to: 0, message: 'El precio %{value} debe ser mayor o igual a 0' }
+  validates_with ProductValidator
+  validate  :description_validate
 
-  before_update :out_of_stock, if: :stock_changed?
+  # Includes
 
-  def stock_changed?
-    self.stock_was != self.stock && self.stock < 5
+  def stock_is_changed?
+    stock_was != stock && stock < 5
   end
 
   def out_of_stock
-    puts " - Producto #{self.name} con stock reducido, llamar al proveedor - "
+    Rails.logger.info { "- Producto #{name} con stock reducido, llamar al proveedor -" }
   end
 
   def notify_product_saving
-    puts " - Producto #{self.name} guardado - "
+    Rails.logger.info { "- Producto #{name} guardado -" }
   end
 
   def notify_product_saved
-    puts " - Producto #{self.name} persistido y almacenado en bodega - "
+    Rails.logger.info { "- Producto #{name} persistido y almacenado en bodega -" }
   end
 
+  def description_validate
+    unless description.nil?
+      errors.add(:description, 'La descripción debe tener más de 10 caracteres') unless description.length > 10
+    end
+  end
+  
 end

@@ -93,4 +93,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  config.color = true # Para que se despliegue con colores
+  config.tty = true
+  config.formatter = :documentation # Para obtener información respecto a cada test.
 end
