@@ -58,6 +58,11 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |--|-----|
 |Generador de Migraciones|<https://mitrev.net/rails/2015/04/19/rails-migration-generator-specifying-precision-and-scale/>|
 
+**CONTROLLERS**
+|Topic|Links|
+|--|-----|
+|Helpers to Controllers|<https://api.rubyonrails.org/classes/ActionController/Helpers.html>|
+
 **ACTIVE RECORD & ACTIVE MODEL**
 |Topic|Links|
 |--|-----|
@@ -93,3 +98,19 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |Desplegar una aplicación de React y Express JS con Docker :: DigitalOcean|<https://www.youtube.com/watch?v=g3IiU6pmruY>|
 |Build and Deploy a Modern Full Stack ECommerce React Application with Stripe
 |<https://www.youtube.com/watch?v=4mOkFXyxfsU>|
+
+
+**I18n Multilanguage**
+|Topic|Links|
+|-----|-----|
+|Rails Internationalization (I18n) API|<https://guides.rubyonrails.org/i18n.html>|
+|Rails i18n guide|<https://phrase.com/blog/posts/rails-i18n-guide/>|
+
+**RSpec Framework**
+|Topic|Links|
+|-----|-----|
+|RSpec Mocking & Stubbing Explained|<https://www.youtube.com/watch?v=ciVXLf6YnUE>|
+|Using VCR with RSpec to Record External HTTP Requests|<https://www.youtube.com/watch?v=DDyFfaauW8s>|
+|`before` and `after` hooks|<https://relishapp.com/rspec/rspec-core/v/3-11/docs/hooks/before-and-after-hooks>|
+|Allowing Messages|<https://relishapp.com/rspec/rspec-mocks/v/3-11/docs/basics/allowing-messages>|
+|Rails log message testing :: RSPEC|<https://everydayrails.com/2020/08/10/rails-log-message-testing-rspec.html>|

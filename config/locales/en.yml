@@ -20,6 +20,20 @@ en:
         description: "Description"
         price: "Price"
         stock: "Stock"
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              blank: "Name can't be blank."
+            description:
+              blank: "Description can't be blank."
+            price:
+              blank: "Price can't be blank."
+              not_a_number: "Price must be a number."
+            stock:
+              blank: "Stock can't be blank."
+              not_a_number: "Stock must be a number."    
   helpers:
     label:
       product:
