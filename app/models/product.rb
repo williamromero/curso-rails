@@ -19,7 +19,7 @@ class Product < ApplicationRecord
   # Validations
   validates :name, presence: { message: 'El campo nombre no ha sido correctamente introducido' }
   validates :description, presence: { message: 'El campo descripción no ha sido correctamente introducido' }
-  validates :price, numericality: { greater_than_or_equal_to: 0, message: 'El precio %{value} debe ser mayor o igual a 0' }
+  validates :price, numericality: { greater_than_or_equal_to: 1, message: 'El precio %{value} debe ser mayor o igual a 0' }
   validates_with ProductValidator
   validate  :description_validate
 

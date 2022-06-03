@@ -20,19 +20,11 @@ RSpec.describe Product, type: :model do
       expect(product).to be_valid
     end
 
-    it 'should fire a log when product stock is updated' do
-      # product.stock = 2
-      product.stock = 3
-      p product.changes
-      product.save
-
-      expect(product.out_of_stock).to eq(expected)
-
-      # expect(product.save).to receive(:out_of_stock).with(expected)
-
-      # expect(product.out_of_stock if product.changed?).to eq(expected)
-      # allow(Rails.logger).to receive(:info).with(expected)
-      # expect(Rails.logger).to receive(:info).with(expected)
+    it 'should fire a log when product stock is updated with a number < 5' do
+      allow(Rails.logger).to receive(:info).and_return(expected)
+      product.stock = 1;
+      product.stock = 2; product.save; expect(Rails.logger).to receive(:info).with(expected) unless product.stock == product.stock_was
+      expect(Rails.logger).to have_received(:info).at_least(3).times
     end
     
   end
