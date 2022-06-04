@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_132908) do
+ActiveRecord::Schema.define(version: 2022_06_03_063455) do
 
   create_table "credit_cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "no_card"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2022_05_30_132908) do
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "code"
     t.string "name"
+    t.text "uuid"
     t.string "description"
     t.integer "stock"
     t.decimal "price", precision: 10, scale: 2
