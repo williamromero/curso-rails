@@ -26,13 +26,19 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 
 ### DOCKER COMMANDS
 
+First steps to create and orquestate containers:
+
 ```shell
   # Orquestate containers and volumes
   docker-compose build
 
   # Start containers with docker-compose
   docker-compose up
+```
 
+Luego, de iniciar la aplicación, abrimos otra ventana y creamos la base de datos.
+
+```shell
   # Create database
   docker-compose run app bundle exec rake db:create
 

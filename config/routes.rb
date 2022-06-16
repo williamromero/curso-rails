@@ -1,15 +1,23 @@
-Rails.application.routes.draw do
-  get 'credit_cards/principal'
-  get 'credit_cards/payment'
-  
+Rails.application.routes.draw do  
+  root 'products#index'
+
   resources :products, param: :uuid
 
   namespace :base do
+
     resources :shopping_cart, only: [:index] do
       member do
         get :list_items
       end
     end
+
+    resources :credit_cards, only: [:index] do
+      collection do
+        get :principal
+        get :payment
+      end
+    end
+
   end
 
   namespace :api do
