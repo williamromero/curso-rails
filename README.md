@@ -24,20 +24,11 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |8.| [ORM & Relaciones](https://github.com/williamromero/curso-rails/wiki/9.-ORM-&-Relaciones) |
 <br>
 
-```ruby
-  # https://gist.github.com/thebucknerlife/10090014
-  # https://www.learnhowtoprogram.com/ruby-and-rails/authentication-and-authorization/authentication-with-bcrypt
-  # https://binarapps.com/simple-authentication-with-bcrypt-and-warden/
-  # https://stevepolito.design/blog/rails-authentication-from-scratch/
-  # https://api.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html
-  # https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html
-  # https://api.rubyonrails.org/v6.1.0/classes/ActiveRecord/QueryMethods.html#method-i-where
-```
-
 ### DOCKER COMMANDS
 
 ```shell
-  # Docker commands
+  # Orquestate containers and volumes
+  docker-compose build
 
   # Start containers with docker-compose
   docker-compose up
