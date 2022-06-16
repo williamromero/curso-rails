@@ -1,33 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Stock</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-asdfasdf
-  <tbody>
+<div class="principal-products">
+
+  <div class="breadcrumbs">
+    <h1>Products</h1>
+    <%= link_to 'New Product', new_product_path %>
+  </div>
+
+  <div class="products">
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.stock %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product_path(product.uuid) %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="items">
+        <h2 class="item-name"><%= product.name %></h2>
+        <p class="item-description"><%= reduced_text product.description %></p>
+        <div class="options">
+          <p class="item-price">
+            <strong>Precio:</strong>
+            <%= reduced_price product.price %>
+          </p>
+          <p class="item-stock">
+            <strong>Stock:&nbsp;</strong>
+            <%= product.stock %>
+          </p>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  
+  </div>
 
-<br>
 
-<%= link_to 'New Product', new_product_path %>
+  <br>
+
+</div>

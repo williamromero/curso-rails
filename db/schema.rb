@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_06_15_065026) do
 
-  create_table "credit_cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "credit_cards", charset: "utf8mb3", force: :cascade do |t|
     t.string "no_card"
     t.string "expiration_date", default: "", null: false
     t.string "owner"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_06_15_065026) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "line_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "line_items", charset: "utf8mb3", force: :cascade do |t|
     t.integer "quantity", default: 1
     t.bigint "product_id", null: false
     t.bigint "shopping_cart_id", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_06_15_065026) do
     t.index ["shopping_cart_id"], name: "index_line_items_on_shopping_cart_id"
   end
 
-  create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "products", charset: "utf8mb3", force: :cascade do |t|
     t.string "code"
     t.string "name"
     t.text "uuid"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_06_15_065026) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "shopping_carts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "shopping_carts", charset: "utf8mb3", force: :cascade do |t|
     t.decimal "total", precision: 10, scale: 2, default: "0.0"
     t.bigint "user_id", null: false
     t.boolean "active", default: false, null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2022_06_15_065026) do
     t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.text "password_digest"

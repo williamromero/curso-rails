@@ -1,5 +1,5 @@
 
-1000.times {
+100.times {
   Product.create(
     name: Faker::Commerce.product_name,
     description: Faker::Lorem.paragraph,

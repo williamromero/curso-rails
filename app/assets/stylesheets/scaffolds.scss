@@ -4,7 +4,7 @@
 //   margin: 33px; }
 
 body {
-  background-color: rgb(214, 234, 250);
+  background-color: rgb(236, 246, 255);
   display: flex;
   flex: 0 0 100%;
   flex-flow: row;
@@ -13,11 +13,12 @@ body {
   width: 100%;
 
   h1 {
-    color: red;
+    color: #6a6aa6;
   }
 }
 
 body, p, ol, ul, td {
+  color: #4c4c72;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }

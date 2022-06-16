@@ -1,3 +1,85 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  margin: 0;
+  .principal-products {
+    align-items: center;
+    // background-color: #fff;
+    display: flex;
+    flex: 0 0 90%;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+
+    .breadcrumbs {
+      align-items: center;
+      display: flex;
+      flex: 0 0 100%;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: 3em 0 1em;
+      width: 100%;
+
+      a {
+        background-color: #6a6aa6;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0 .5em;
+        padding: .5em 1em;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #40406c;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .products {
+      display: flex;
+      flex: 0 0 100%;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .items {
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(95, 133, 186, .20);
+        border-radius: 5px;
+        font-size: 0.6rem;
+        margin-bottom: 3em;
+        padding: 1em;
+        width: 30%;
+
+        h2 {
+          margin: 0 0 1em;
+        }
+
+        .options {
+          display: flex;
+          flex-flow: row wrap;
+          flex: 0 0 100%;
+          justify-content: space-between;
+  
+          p {
+            flex: 0 0 45%;
+            margin: 0;
+            padding: 0;
+          }
+
+          .item-stock {
+            display: flex;
+            justify-content: end;
+          }
+        } 
+      }
+
+    }
+  }
+}

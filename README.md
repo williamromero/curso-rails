@@ -21,7 +21,7 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |6.| [Instalación de Entorno de Pruebas](https://github.com/williamromero/curso-rails/wiki/6.-Instalaci%C3%B3n-de-Entorno-de-Pruebas)|
 |7.| [ORM & ActiveRecord](https://github.com/williamromero/curso-rails/wiki/7.-ORM-&-ActiveRecord)|
 |8.| [Rack Cors Configuration](https://github.com/cyu/rack-cors) |
-|8.| [ORM & Relaciones](https://github.com/williamromero/curso-rails/wiki/9.-ORM-&-Relaciones) |
+|9.| [ORM & Relaciones](https://github.com/williamromero/curso-rails/wiki/9.-ORM-&-Relaciones) |
 <br>
 
 ### DOCKER COMMANDS
