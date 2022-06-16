@@ -1,7 +1,21 @@
+// body {
+//   background-color: #fff;
+//   color: #333;
+//   margin: 33px; }
+
 body {
-  background-color: #fff;
-  color: #333;
-  margin: 33px; }
+  background-color: rgb(214, 234, 250);
+  display: flex;
+  flex: 0 0 100%;
+  flex-flow: row;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  h1 {
+    color: red;
+  }
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

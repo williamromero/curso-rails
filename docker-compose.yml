@@ -1,0 +1,51 @@
+
+version: "3.9"
+services:
+  app:
+    container_name: app
+    build:
+      # command: bundle exec puma -p 3000 -e production
+      context: .
+      dockerfile: docker/app/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - .:/curso-rails
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=localhost
+      - DB_NAME=curso_rails
+      - DB_USERNAME=root
+      - DB_PASSWORD=1234
+      - RAILS_SERVE_STATIC_FILES=true
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+  web:
+    container_name: web
+    environment:
+     DB_USERNAME: root
+     DB_PASSWORD: 1234
+     DB_NAME: curso_rails_dev
+     DB_PORT: 3306
+     DB_HOST: db
+     RAILS_ENV: production
+     RAILS_MAX_THREADS: 5
+     BUNDLE_PATH: /bundle    
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    depends_on:
+      - app
+    ports:
+      - 80:80
+volumes:
+  db:
+#   app:
+# volumes:
+#   db-data:
+#     driver: local
