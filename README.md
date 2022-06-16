@@ -20,10 +20,9 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
 |5.| [Instalación de gema Foreman](https://github.com/williamromero/curso-rails/wiki/5.-Instalar-Foreman-GEM)|
 |6.| [Instalación de Entorno de Pruebas](https://github.com/williamromero/curso-rails/wiki/6.-Instalaci%C3%B3n-de-Entorno-de-Pruebas)|
 |7.| [ORM & ActiveRecord](https://github.com/williamromero/curso-rails/wiki/7.-ORM-&-ActiveRecord)|
-
 |8.| [Rack Cors Configuration](https://github.com/cyu/rack-cors) |
+|8.| [ORM & Relaciones](https://github.com/williamromero/curso-rails/wiki/9.-ORM-&-Relaciones) |
 <br>
-
 
 ```ruby
   # https://gist.github.com/thebucknerlife/10090014
@@ -35,24 +34,41 @@ El siguiente proyecto es parte del Bootcamp de Ruby on Rails & React.
   # https://api.rubyonrails.org/v6.1.0/classes/ActiveRecord/QueryMethods.html#method-i-where
 ```
 
+### DOCKER COMMANDS
+
 ```shell
   # Docker commands
-  # Command to erase container and images
-  docker rm -f $(docker ps -a -q) && sleep 2 && docker rmi -f $(docker images -a -q)
-
-  # Ref: https://stackoverflow.com/questions/50294380/failing-to-remove-stopped-docker-container  
-
 
   # Start containers with docker-compose
-
   docker-compose up
 
   # Create database
-  docker-compose run web bundle exec rake db:create
+  docker-compose run app bundle exec rake db:create
 
   # Create tables
-  docker-compose run web bundle exec rake db:migrate
+  docker-compose run app bundle exec rake db:migrate
 
   # Import data test
-  docker-compose run web bundle exec rake db:seed  
+  docker-compose run app bundle exec rake db:seed
+
+  # Command to erase container and images
+  docker rm -f $(docker ps -a -q) && sleep 2 && docker rmi -f $(docker images -a -q)
+  # Ref: https://stackoverflow.com/questions/50294380/failing-to-remove-stopped-docker-container      
+```
+
+### FOREMAN COMMANDS
+
+**Creation of Procfile.dev file**
+
+```shell
+  # Procfile.dev
+  
+  web: bundle exec rails s
+  webpacker: ./bin/webpack-dev-server
+```
+
+**Run with Procfile**
+
+```shell
+  foreman start -f Procfile.dev
 ```
