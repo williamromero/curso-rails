@@ -1,7 +1,8 @@
 class CreditCardsController < ApplicationController
-  def principal
-  end
+  
+  def index; end
 
-  def payment
-  end
+  def principal;end
+
+  def payment;end
 end
