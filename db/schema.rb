@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_03_063455) do
+ActiveRecord::Schema.define(version: 2022_06_15_065026) do
 
   create_table "credit_cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "no_card"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2022_06_03_063455) do
     t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "line_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "quantity", default: 1
+    t.bigint "product_id", null: false
+    t.bigint "shopping_cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_line_items_on_product_id"
+    t.index ["shopping_cart_id"], name: "index_line_items_on_shopping_cart_id"
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -32,4 +42,25 @@ ActiveRecord::Schema.define(version: 2022_06_03_063455) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "shopping_carts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.decimal "total", precision: 10, scale: 2, default: "0.0"
+    t.bigint "user_id", null: false
+    t.boolean "active", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shopping_carts_on_user_id"
+  end
+
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.text "password_digest"
+    t.text "token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "line_items", "products"
+  add_foreign_key "line_items", "shopping_carts"
+  add_foreign_key "shopping_carts", "users"
 end

@@ -12,13 +12,18 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+require 'faker'
+
 class Product < ApplicationRecord
+
+  has_many :line_items
+
   # Callbacks
   before_save   :notify_product_saving
+  before_create :generate_uuid, :generate_code
   before_update :out_of_stock, if: :stock_is_changed?
-  after_save    :notify_product_saved
-
   before_update :notify_different_price, if: :price_is_changed?
+  after_save    :notify_product_saved
 
   
   # Validations
@@ -28,7 +33,7 @@ class Product < ApplicationRecord
   validates_with ProductValidator
   validate  :description_validate
   # validates :code, :confirmation => true, unless: Proc.new { |resource| resource.code == "" }
-
+  validates :code, uniqueness: { message: 'El código ya existe' }
   # Scopes
   scope :availables, -> { where('stock > 0') }
   scope :cheaper_products, -> ( precio ) { where('price < ?', precio) }
@@ -65,6 +70,14 @@ class Product < ApplicationRecord
     unless description.nil?
       errors.add(:description, 'La descripción debe tener más de 10 caracteres') unless description.length > 10
     end
+  end
+
+  def generate_uuid
+    self.uuid = SecureRandom.uuid
+  end
+
+  def generate_code
+    self.code = "P#{[*0..9].shuffle[0..5].join}-#{Date.today.strftime("%Y%m%d")}"
   end
   
 end
