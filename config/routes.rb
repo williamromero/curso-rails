@@ -22,7 +22,20 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :products, only: [:index, :show]
+      
+      resources :products, only: [:index, :show], param: :uuid
+
+      resources :authentications, path: '/', only: [] do
+        collection do
+          post :login
+          post :forgot
+          post :register
+          post :reset_password
+          post :change_password
+          post :logout
+        end
+
+      end   
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

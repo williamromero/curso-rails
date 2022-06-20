@@ -17,19 +17,26 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
+
 class ShoppingCart < ApplicationRecord
   
   belongs_to :user
   has_many :line_items
 
-  # def check_previous_active?
-  #   return false if self.nil?
-  #   ShoppingCart.where(user_id: self.user_id, active: true) != nil ? true : false
-  # end
+  before_create :allow_only_one_active_cart
+  after_create :notify_created_cart
 
-  # def check_active
-  #   return self.nil? ? false : true
-  #   Rails.logger.warn { "- #{check_previous_active? ? "Si hay un carrito activo" : "No hay un carrito activo"} -" } 
-  # end
+  def allow_only_one_active_cart
+    return raise Cart::Error.new('El usuario posee un carrito de compras activo') if check_previous_active?
+    self.active = true
+  end
+
+  def notify_created_cart
+    Rails.logger.info 'Se creo un nuevo carrito de compras'
+  end
+
+  def check_previous_active?
+    return ShoppingCart.where(user: self.user, active: true).exists?
+  end
 
 end

@@ -5,7 +5,7 @@ default: &default
   database: curso_rails
   username: root
   password: 1234
-  host: db
+  # host: db
 
 development:
   <<: *default

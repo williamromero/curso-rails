@@ -12,19 +12,17 @@
 #
 class User < ApplicationRecord
   has_secure_password
-  has_many :shopping_carts
-  has_one  :shopping_cart, -> { where(active: true).order(id: :desc) }
-
-
   
-  # private
-  # def shopping_carts
-  #   return 'NO TENEMOS EL RREGISTRO' if self.nil?
-  #   begin
-  #     ShoppingCart.where(user_id: self.id, active: true).last
-  #   rescue => exception
-  #     raise 'No se pudo encontrar el carrito de compras'
-  #   end
-  # end
+  has_many :shopping_carts
+  # has_one  :shopping_cart, -> { where(active: true).order(id: :desc) }
+
+  validates :username, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
+  
+  validates_with PasswordValidator
+  
+  def generate_password_token
+    self.token = SecureRandom.uuid; self.save!
+  end
 
 end
