@@ -38,5 +38,13 @@ Rails.application.routes.draw do
       end   
     end
   end
+
+  scope :principal, as: "principal", module: "principal" do
+    resources :warehouses, except: [:show] do
+      collection do
+        get 'products/:uuid', to: 'warehouses#show'
+      end
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

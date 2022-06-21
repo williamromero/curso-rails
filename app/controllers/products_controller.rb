@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+
   end
 
   # GET /products/new
@@ -18,6 +19,17 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
   end
+
+  # def purchase
+  #   @product = Product.find_by uuid: params[:uuid]
+  #   @product.stock -= 1
+  #   @product.save
+
+  #   respond_to do |format|
+  #     format.html { redirect_to @product, notice: 'Product was successfully purchased.' }
+  #     format.json { render :show, status: :ok, location: @product }
+  #   end
+  # end
 
   # POST /products or /products.json
   def create

@@ -1,0 +1,11 @@
+<div style="display: flex; flex-flow: column;">
+
+  <h2 style="width: 100%;">ESTAMOS EN LAS BODEGAS</h2>
+  <br/>
+  <div style="display: flex; flex-flow: column;">
+    <% @products.each do |prd| %>
+      <p><%= prd.name %></p>
+    <% end %>
+  </div>
+  
+</div>
