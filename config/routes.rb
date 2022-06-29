@@ -26,11 +26,13 @@ Rails.application.routes.draw do
       resources :products, only: [:index, :show], param: :uuid
 
       resources :shopping_carts, only: [:create] do
-        collection do
-          get  :addition
-          
+        collection do          
           post :build_object
           post :add_product
+          post :remove_products
+          post :decrease_products
+          
+          get  :sum_products
         end
       end
 
