@@ -13,7 +13,7 @@ class Api::V1::ApplicationController < ActionController::API
     token   = JWT.decode(payload, Rails.application.credentials.jwt_secret)
 
     begin
-      p token
+      Rails.logger.debug token
       @current_user = User.find(token.first['user_id'])
     rescue ActiveRecord::RecordNotFound
       render json: { errors: 'Invalid token' }, status: :unauthorized
@@ -22,23 +22,16 @@ class Api::V1::ApplicationController < ActionController::API
     else
       @current_user
     end
-
   end
 
   def failed_authentication
-    begin
-      raise Cart::Error.new('CartError :: Problema de autenticación')
-    rescue Cart::Error => e
-      render json: { errors: e.message }, status: :unauthorized
-    end
+    raise Account::Error, 'Account :: Problema de autenticación'
+  rescue Account::Error => e
+    render json: { errors: e.message }, status: :unauthorized
   end
-  
+
   def auth_header
     request.headers['Authorization']
   end
-
-  def current_user
-    @current_user
-  end
-
+  
 end

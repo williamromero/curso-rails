@@ -15,7 +15,6 @@
 require 'faker'
 
 class Product < ApplicationRecord
-
   has_many :line_items
 
   # Callbacks
@@ -25,25 +24,25 @@ class Product < ApplicationRecord
   before_update :notify_different_price, if: :price_is_changed?
   after_save    :notify_product_saved
 
-  
   # Validations
   validates :name, presence: { message: 'El campo nombre no ha sido correctamente introducido' }
   validates :description, presence: { message: 'El campo descripción no ha sido correctamente introducido' }
-  validates :price, numericality: { greater_than_or_equal_to: 1, message: 'El precio %{value} debe ser mayor o igual a 0' }
+  validates :price,
+            numericality: { greater_than_or_equal_to: 1, message: 'El precio %{value} debe ser mayor o igual a 0' }
   validates_with ProductValidator
   validate  :description_validate
   # validates :code, :confirmation => true, unless: Proc.new { |resource| resource.code == "" }
   validates :code, uniqueness: { message: 'El código ya existe' }
   # Scopes
   scope :availables, -> { where('stock > 0') }
-  scope :cheaper_products, -> ( precio ) { where('price < ?', precio) }
+  scope :cheaper_products, ->(precio) { where('price < ?', precio) }
   scope :ordered_by_price, -> { order(price: :desc) }
-  
+
   # Includes
 
   # Class Methods
   def self.top_five_cheap_products(limit: nil, precio: nil)
-    self.cheaper_products(precio).limit(limit).ordered_by_price.select(:name, :price)
+    cheaper_products(precio).limit(limit).ordered_by_price.select(:name, :price)
   end
 
   def stock_is_changed?
@@ -67,8 +66,8 @@ class Product < ApplicationRecord
   end
 
   def description_validate
-    unless description.nil?
-      errors.add(:description, 'La descripción debe tener más de 10 caracteres') unless description.length > 10
+    if !description.nil? && description.length <= 10
+      errors.add(:description, 'La descripción debe tener más de 10 caracteres')
     end
   end
 
@@ -77,7 +76,6 @@ class Product < ApplicationRecord
   end
 
   def generate_code
-    self.code = "P#{[*0..9].shuffle[0..5].join}-#{Date.today.strftime("%Y%m%d")}"
+    self.code = "P#{[*0..9].sample(6).join}-#{Date.today.strftime('%Y%m%d')}"
   end
-  
 end

@@ -6,15 +6,15 @@ module Base
 
       render json: shopping_carts.to_json(
         include: {
-          product: { :only => [:name, :price] },
-          shopping_cart: { 
-            :only => [:total], 
-            :include => { 
-              :user => { :only => [:username] } 
-            } 
+          product: { only: %i[name price] },
+          shopping_cart: {
+            only: [:total],
+            include: {
+              user: { only: [:username] }
+            }
           }
         },
-        :except => [:created_at, :updated_at]
+        except: %i[created_at updated_at]
       )
     end
 
@@ -23,8 +23,10 @@ module Base
       #                              .joins("LEFT JOIN line_items ON line_items.shopping_cart_id = #{params[:id]}")
       #                              .group_by(&:shopping_cart_id)
       shopping_carts = ShoppingCart.find(params[:id]).line_items.includes(:product, :shopping_cart)
-      render json: shopping_carts.to_json(include: { product: { :only => [:name, :price] }, shopping_cart: { :only => [:total] } }, :except => [:created_at, :updated_at])
+      render json: shopping_carts.to_json(
+        include: { product: { only: %i[name price] },
+                   shopping_cart: { only: [:total] } }, except: %i[created_at updated_at]
+      )
     end
-
   end
 end

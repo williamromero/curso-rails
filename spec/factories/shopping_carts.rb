@@ -5,9 +5,10 @@
 #  id         :bigint           not null, primary key
 #  active     :boolean          default(FALSE), not null
 #  total      :decimal(10, 2)   default(0.0)
+#  uuid       :text(65535)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :bigint           not null
+#  user_id    :bigint
 #
 # Indexes
 #
@@ -19,7 +20,7 @@
 #
 FactoryBot.define do
   factory :shopping_cart do
-    total { "9.99" }
+    total { '9.99' }
     user { nil }
   end
 end

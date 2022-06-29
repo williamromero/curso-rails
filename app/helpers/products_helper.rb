@@ -1,5 +1,4 @@
 module ProductsHelper
-
   def reduced_text(text)
     truncate(text, length: 50)
   end
@@ -11,5 +10,4 @@ module ProductsHelper
   def fixed_date_format(date)
     date.strftime('%d/%m/%Y')
   end
-
 end

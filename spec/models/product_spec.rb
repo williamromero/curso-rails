@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 # == Schema Information
 #
 # Table name: products
@@ -24,13 +24,15 @@ RSpec.describe Product, type: :model do
 
     it 'should fire a log when product stock is updated with a number < 5' do
       allow(Rails.logger).to receive(:info).and_return(expected)
-      product.stock = 1;
-      product.stock = 2; product.save; expect(Rails.logger).to receive(:info).with(expected) unless product.stock == product.stock_was
+      product.stock = 1
+      product.stock = 2
+
+      product.save
+      expect(Rails.logger).to receive(:info).with(expected) unless product.stock == product.stock_was
       expect(Rails.logger).to have_received(:info).at_least(3).times
     end
-    
   end
 end
 
-# https://relishapp.com/rspec/rspec-mocks/v/3-11/docs/basics/allowing-messages
-# https://www.youtube.com/watch?v=ciVXLf6YnUE
+#  https://relishapp.com/rspec/rspec-mocks/v/3-11/docs/basics/allowing-messages
+#  https://www.youtube.com/watch?v=ciVXLf6YnUE

@@ -1,14 +1,12 @@
 class Principal::WarehousesController < ApplicationController
-
   before_action :set_product, only: [:show]
 
   def index
-    @title = "Warehouses"
+    @title = 'Warehouses'
     @products = Product.limit(5)
   end
 
-  def show
-  end
+  def show; end
 
   private
 
@@ -16,5 +14,4 @@ class Principal::WarehousesController < ApplicationController
     @product = Product.find_by uuid: params[:uuid]
     @title = @product.name
   end
-
 end

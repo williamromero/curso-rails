@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Cart
+module Account
   class Error < StandardError
     def initialize(message = nil)
       super(message)

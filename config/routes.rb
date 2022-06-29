@@ -25,6 +25,15 @@ Rails.application.routes.draw do
       
       resources :products, only: [:index, :show], param: :uuid
 
+      resources :shopping_carts, only: [:create] do
+        collection do
+          get  :addition
+          
+          post :build_object
+          post :add_product
+        end
+      end
+
       resources :authentications, path: '/', only: [] do
         collection do
           post :login

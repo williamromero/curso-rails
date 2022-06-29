@@ -12,17 +12,22 @@
 #
 class User < ApplicationRecord
   has_secure_password
-  
+
   has_many :shopping_carts
   # has_one  :shopping_cart, -> { where(active: true).order(id: :desc) }
 
   validates :username, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
-  
+  validates :email, presence: true, uniqueness: true,
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
+
   validates_with PasswordValidator
-  
+
   def generate_password_token
-    self.token = SecureRandom.uuid; self.save!
+    self.token = SecureRandom.uuid
+    save!
   end
 
+  def shopping_carts
+    ShoppingCart.where(user: self, active: true)
+  end
 end

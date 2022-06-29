@@ -22,7 +22,7 @@ ADD Gemfile.lock Gemfile.lock
 #     bundle install --jobs=4 --retry=3 --deployment --without development test\
 
 
-RUN apk update && apk add --update --no-cache --virtual build-dependency build-base ruby-dev mysql-dev postgresql-dev git sqlite-dev imagemagick-dev curl git openssh openssl tzdata git make bash openssh
+RUN apk update && apk add --update --no-cache --virtual build-dependency build-base ruby-dev mysql-dev postgresql-dev git sqlite-dev imagemagick-dev curl openssh openssl tzdata make bash
 
 #   apk add --no-cache \
 RUN gem install bundler:2.1.4

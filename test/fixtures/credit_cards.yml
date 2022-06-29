@@ -3,8 +3,8 @@
 # Table name: credit_cards
 #
 #  id              :bigint           not null, primary key
-#  expiration_date :string(255)      default(""), not null
-#  no_card         :string(255)
+#  expiration_date :string(255)      default("")
+#  no_card         :string(255)      default("")
 #  owner           :string(255)
 #  provider        :string(255)
 #  created_at      :datetime         not null
