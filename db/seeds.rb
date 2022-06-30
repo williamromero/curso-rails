@@ -24,3 +24,7 @@ end
   )
 end
 # https://rubydoc.info/github/faker-ruby/faker/master/Faker%2FInternet.password
+
+ShoppingCart.create(total: 0, active: true, user_id: User.all.sample.id, uuid: SecureRandom.uuid)
+3.times { ShoppingCart.create(total: 0, active: true, user_id: nil, uuid: SecureRandom.uuid) }
+ShoppingCart.create(total: 0, active: true, user_id: User.all.sample.id, uuid: SecureRandom.uuid)

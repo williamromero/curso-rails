@@ -71,6 +71,14 @@ class ShoppingCart < ApplicationRecord
     active.count.positive?
   end
 
+  def self.retrieve_actived_carts(carts)
+    carts.select(&:active_validation).any?
+  end
+
+  def active_validation
+    self.active == true
+  end
+
   def self.notify_last_cart_closed(shopping_carts)
     shopping_carts.last.update active: false
     Rails.logger.warn "Se cerró el último carrito de compras abierto :: #{shopping_carts.last.uuid}"

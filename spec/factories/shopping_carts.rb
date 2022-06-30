@@ -20,7 +20,14 @@
 #
 FactoryBot.define do
   factory :shopping_cart do
-    total { '9.99' }
-    user { nil }
+    total   { 0.00 }
+    active  { false }
+    user
+  end
+
+  factory :shopping_cart_active do
+    total   { 0.00 }
+    active  { true }
+    user
   end
 end

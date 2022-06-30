@@ -33,5 +33,4 @@ class Api::V1::ApplicationController < ActionController::API
   def auth_header
     request.headers['Authorization']
   end
-  
 end

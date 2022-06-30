@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :shopping_carts
   # has_one  :shopping_cart, -> { where(active: true).order(id: :desc) }
 
+  after_create :generate_password_token
+
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true,
                     format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
