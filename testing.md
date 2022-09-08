@@ -34,3 +34,7 @@ Numquam reprehenderit dolorem. Repudiandae accusantium pariatur et quis quibusda
   web: bundle exec rails s
   webpacker: ./bin/webpack-dev-server
 ```
+
+# TESTING MODIFICATIONS
+
+Numquam reprehenderit dolorem. Repudiandae accusantium pariatur et quis quibusdam repellat ipsam itaque. Vel aut sit pariatur est et minima.
